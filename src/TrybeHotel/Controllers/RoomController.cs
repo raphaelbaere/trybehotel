@@ -24,7 +24,8 @@ namespace TrybeHotel.Controllers
         // 7. Desenvolva o endpoint POST /room
         [HttpPost]
         public IActionResult PostRoom([FromBody] Room room){
-            throw new NotImplementedException();
+            var roomToAdd = _repository.AddRoom(room);
+            return Created("", roomToAdd);
         }
 
         // 8. Desenvolva o endpoint DELETE /room/:roomId
